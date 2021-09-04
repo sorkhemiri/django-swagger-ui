@@ -1,0 +1,24 @@
+import json
+import yaml
+from django.core.exceptions import ImproperlyConfigured
+from django.shortcuts import render
+from django.conf import settings
+
+
+def data_to_html(request):
+    data = {
+        "title": "Sample Pet Store App",
+        "description": "This is a sample server for a pet store.",
+        "termsOfService": "http://example.com/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.example.com/support",
+            "email": "support@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.1"
+    }
+    return render(request, template_name="swagger_base.html", context={'data': data})

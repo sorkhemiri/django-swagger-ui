@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class YamlConverterConfig(AppConfig):
-    name = 'yaml_converter'
+class SwaggerUIConfig(AppConfig):
+    name = 'swagger_ui'
